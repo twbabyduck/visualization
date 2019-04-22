@@ -10,7 +10,7 @@ requirements = [
     'trimesh[easy]',
     'autolab_core',
     'autolab_perception',
-    'meshrender'
+#    'meshrender'
 ]
 
 exec(open('visualization/version.py').read())
