@@ -16,6 +16,8 @@ from autolab_core import RigidTransform, BagOfPoints, Point, PointCloud
 
 from meshrender import Scene, SceneObject, InstancedSceneObject, AmbientLight, SceneViewer, MaterialProperties
 
+from meshpy import Mesh3D
+
 class Visualizer3D:
     """
     Class containing static methods for visualization.
@@ -306,6 +308,9 @@ class Visualizer3D:
         name : str
             A name for the object to be added.
         """
+        if isinstance(mesh, Mesh3D):
+            mesh = mesh.trimesh
+
         if not isinstance(mesh, trimesh.Trimesh):
             raise ValueError('Must provide a trimesh.Trimesh object')
 
